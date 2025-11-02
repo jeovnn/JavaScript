@@ -16,5 +16,19 @@ for (const iterator of vList) {
     console.log(iterator)
 }
 
+// for para pegar as keys de um objeto
+let pessoa = {
+    nome: "Lucas",
+    idade: 25,
+    cidade: "São Paulo"
+  };
+  
+  for (let key in pessoa) {
+    console.log(key + ": " + pessoa[key]);
+  }
+//nome: Lucas
+//idade: 25
+//cidade: São Paulo
+
 
 
