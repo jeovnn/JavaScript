@@ -1,26 +1,25 @@
 let input = require('fs').readFileSync('./dev/stdin/file.txt', 'utf8');
 let lines = input.split('\n');
 
+let palavras = []
+let palavraseparada = ''
+
+
 let i = 0
-while(lines[i] !== "*"){
+while(lines[i]!='*'){
+    let primeiraletra = []
+    let tautograma = 'Y'
+    palavras = lines[i].split(' ')
 
-    let array = []
-    let frase = lines[i].split(' ')
-    let qtdpalavras = frase.length
-    let primeiraletra = ''
-    let tautograma = "Y"
-    for(let i = 0; i < qtdpalavras; i++){
-        array[i] = frase[i].toUpperCase()
-        let letras = array[i].split('')
-        primeiraletra += letras[0]
-
-        let aux = i
-        for(let y=0; y < primeiraletra.length;y++){
-            if(primeiraletra[i] != primeiraletra[y]){
-                tautograma = "N"
-            }
-        }
+    for (let i =0; i< palavras.length; i++){
+        palavraseparada = palavras[i].toUpperCase()
+        primeiraletra += palavraseparada[0].toUpperCase()
     }
-    console.log(tautograma)
-    i += 1
+   for(let w = 0; w < primeiraletra.length; w++){
+    if(primeiraletra[w]!= palavraseparada[0]){
+        tautograma='N'
+    }
+   }
+   console.log(tautograma)
+    i++
 }
